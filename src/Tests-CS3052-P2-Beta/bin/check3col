@@ -1,0 +1,21 @@
+#!/bin/bash
+#
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+export k=`$DIR/checkcol < /dev/stdin`
+export RESULT=$?
+
+if [[ $RESULT != 0 ]] ; then
+	exit $RESULT
+	fi
+
+if [[ "$k" != "3" ]] ; then
+	echo "Error: number of colours should be 3"
+	exit 1
+	fi
+
+echo $k
+
+exit 0
+
