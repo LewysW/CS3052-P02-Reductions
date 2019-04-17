@@ -43,6 +43,13 @@ Task 1: Straightforward Reductions
 Part 1:
 SAT in DIMACS CNF format -> 3SAT DIMACS CNF format
 
+To convert from SAT to 3SAT, iterate through the clauses while the clause is <= 3 literals in length. 
+Once a fourth literal is encountered, split the clause in two (placing all literals beyond the first two into the second clause) and
+introducing a new variable to the end of the first clause and the negation of that variable to the beginning of the second clause.
+Repeat while there is a clause longer than three literals in length.
+
+Source of above method: https://www.coursera.org/lecture/advanced-algorithms-and-complexity/sat-to-3-sat-S2Uvv
+
 Part 2:
 kCOL in DIMACS COL format -> SAT DIMACS CNF format
 
