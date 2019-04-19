@@ -7,6 +7,12 @@
 #IncludeRegexTransform: 
 
 /cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/main.cpp
+main.h
+/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/main.h
+
+/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/main.h
 iostream
+-
+cstring
 -
 
