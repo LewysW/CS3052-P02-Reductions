@@ -15,4 +15,22 @@ iostream
 -
 cstring
 -
+parserCNF.h
+/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/parserCNF.h
+
+/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/parserCNF.cpp
+parserCNF.h
+/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/parserCNF.h
+
+/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/parserCNF.h
+iostream
+-
+vector
+-
+sstream
+-
+algorithm
+-
+cstdlib
+-
 

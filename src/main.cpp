@@ -1,19 +1,27 @@
 #include "main.h"
+#include "SAT.h"
+
+//TODO - remove comments before printing
 
 int main(int argc, char* argv[]) {
     if (argc > 1) return 0;
-    cout << argv[0] << endl;
+
     string execStr(argv[0]);
+    int valid = 0;
 
     if (endsWith(execStr, "sattothreesat")) {
-        cout << "sattothreesat" << endl;
+        ParserCNF parser;
+        vector<string> file = parser.readInput();
+        valid = parser.validFile(file);
+        SAT sat(execStr);
+        printFile(file);
     } else if (endsWith(execStr, "coltosat")) {
         cout << "coltosat" << endl;
     } else if (endsWith(execStr, "threesattocol")) {
         cout << "threesattocol" << endl;
     }
 
-    return 0;
+    return valid;
 }
 
 /**
@@ -30,4 +38,10 @@ bool endsWith(std::string str, std::string suffix) {
         return false;
 
     return str.substr(str.length() - suffix.length()) == suffix;
+}
+
+void printFile(vector<string>& file) {
+    for (auto it = file.begin(); it != file.end(); it++) {
+        cout << *it;
+    }
 }

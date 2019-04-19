@@ -80,10 +80,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/SAT.cpp">
+			<Option target="sattothreesat"/>
+		</Unit>
+		<Unit filename="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/SAT.h">
+			<Option target="sattothreesat"/>
+		</Unit>
 		<Unit filename="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/main.cpp">
 			<Option target="sattothreesat"/>
 		</Unit>
 		<Unit filename="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/main.h">
+			<Option target="sattothreesat"/>
+		</Unit>
+		<Unit filename="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/parserCNF.cpp">
+			<Option target="sattothreesat"/>
+		</Unit>
+		<Unit filename="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/parserCNF.h">
 			<Option target="sattothreesat"/>
 		</Unit>
 		<Unit filename="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/CMakeLists.txt">

@@ -81,17 +81,69 @@ CMakeFiles/sattothreesat.dir/src/main.cpp.o.provides: CMakeFiles/sattothreesat.d
 CMakeFiles/sattothreesat.dir/src/main.cpp.o.provides.build: CMakeFiles/sattothreesat.dir/src/main.cpp.o
 
 
+CMakeFiles/sattothreesat.dir/src/parserCNF.cpp.o: CMakeFiles/sattothreesat.dir/flags.make
+CMakeFiles/sattothreesat.dir/src/parserCNF.cpp.o: ../src/parserCNF.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/sattothreesat.dir/src/parserCNF.cpp.o"
+	/usr/lib64/ccache/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sattothreesat.dir/src/parserCNF.cpp.o -c /cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/parserCNF.cpp
+
+CMakeFiles/sattothreesat.dir/src/parserCNF.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sattothreesat.dir/src/parserCNF.cpp.i"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/parserCNF.cpp > CMakeFiles/sattothreesat.dir/src/parserCNF.cpp.i
+
+CMakeFiles/sattothreesat.dir/src/parserCNF.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sattothreesat.dir/src/parserCNF.cpp.s"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/parserCNF.cpp -o CMakeFiles/sattothreesat.dir/src/parserCNF.cpp.s
+
+CMakeFiles/sattothreesat.dir/src/parserCNF.cpp.o.requires:
+
+.PHONY : CMakeFiles/sattothreesat.dir/src/parserCNF.cpp.o.requires
+
+CMakeFiles/sattothreesat.dir/src/parserCNF.cpp.o.provides: CMakeFiles/sattothreesat.dir/src/parserCNF.cpp.o.requires
+	$(MAKE) -f CMakeFiles/sattothreesat.dir/build.make CMakeFiles/sattothreesat.dir/src/parserCNF.cpp.o.provides.build
+.PHONY : CMakeFiles/sattothreesat.dir/src/parserCNF.cpp.o.provides
+
+CMakeFiles/sattothreesat.dir/src/parserCNF.cpp.o.provides.build: CMakeFiles/sattothreesat.dir/src/parserCNF.cpp.o
+
+
+CMakeFiles/sattothreesat.dir/src/SAT.cpp.o: CMakeFiles/sattothreesat.dir/flags.make
+CMakeFiles/sattothreesat.dir/src/SAT.cpp.o: ../src/SAT.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/sattothreesat.dir/src/SAT.cpp.o"
+	/usr/lib64/ccache/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sattothreesat.dir/src/SAT.cpp.o -c /cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/SAT.cpp
+
+CMakeFiles/sattothreesat.dir/src/SAT.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sattothreesat.dir/src/SAT.cpp.i"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/SAT.cpp > CMakeFiles/sattothreesat.dir/src/SAT.cpp.i
+
+CMakeFiles/sattothreesat.dir/src/SAT.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sattothreesat.dir/src/SAT.cpp.s"
+	/usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/SAT.cpp -o CMakeFiles/sattothreesat.dir/src/SAT.cpp.s
+
+CMakeFiles/sattothreesat.dir/src/SAT.cpp.o.requires:
+
+.PHONY : CMakeFiles/sattothreesat.dir/src/SAT.cpp.o.requires
+
+CMakeFiles/sattothreesat.dir/src/SAT.cpp.o.provides: CMakeFiles/sattothreesat.dir/src/SAT.cpp.o.requires
+	$(MAKE) -f CMakeFiles/sattothreesat.dir/build.make CMakeFiles/sattothreesat.dir/src/SAT.cpp.o.provides.build
+.PHONY : CMakeFiles/sattothreesat.dir/src/SAT.cpp.o.provides
+
+CMakeFiles/sattothreesat.dir/src/SAT.cpp.o.provides.build: CMakeFiles/sattothreesat.dir/src/SAT.cpp.o
+
+
 # Object files for target sattothreesat
 sattothreesat_OBJECTS = \
-"CMakeFiles/sattothreesat.dir/src/main.cpp.o"
+"CMakeFiles/sattothreesat.dir/src/main.cpp.o" \
+"CMakeFiles/sattothreesat.dir/src/parserCNF.cpp.o" \
+"CMakeFiles/sattothreesat.dir/src/SAT.cpp.o"
 
 # External object files for target sattothreesat
 sattothreesat_EXTERNAL_OBJECTS =
 
 sattothreesat: CMakeFiles/sattothreesat.dir/src/main.cpp.o
+sattothreesat: CMakeFiles/sattothreesat.dir/src/parserCNF.cpp.o
+sattothreesat: CMakeFiles/sattothreesat.dir/src/SAT.cpp.o
 sattothreesat: CMakeFiles/sattothreesat.dir/build.make
 sattothreesat: CMakeFiles/sattothreesat.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable sattothreesat"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable sattothreesat"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sattothreesat.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -100,6 +152,8 @@ CMakeFiles/sattothreesat.dir/build: sattothreesat
 .PHONY : CMakeFiles/sattothreesat.dir/build
 
 CMakeFiles/sattothreesat.dir/requires: CMakeFiles/sattothreesat.dir/src/main.cpp.o.requires
+CMakeFiles/sattothreesat.dir/requires: CMakeFiles/sattothreesat.dir/src/parserCNF.cpp.o.requires
+CMakeFiles/sattothreesat.dir/requires: CMakeFiles/sattothreesat.dir/src/SAT.cpp.o.requires
 
 .PHONY : CMakeFiles/sattothreesat.dir/requires
 

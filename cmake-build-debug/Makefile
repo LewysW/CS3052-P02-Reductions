@@ -123,6 +123,33 @@ sattothreesat/fast:
 	$(MAKE) -f CMakeFiles/sattothreesat.dir/build.make CMakeFiles/sattothreesat.dir/build
 .PHONY : sattothreesat/fast
 
+src/SAT.o: src/SAT.cpp.o
+
+.PHONY : src/SAT.o
+
+# target to build an object file
+src/SAT.cpp.o:
+	$(MAKE) -f CMakeFiles/sattothreesat.dir/build.make CMakeFiles/sattothreesat.dir/src/SAT.cpp.o
+.PHONY : src/SAT.cpp.o
+
+src/SAT.i: src/SAT.cpp.i
+
+.PHONY : src/SAT.i
+
+# target to preprocess a source file
+src/SAT.cpp.i:
+	$(MAKE) -f CMakeFiles/sattothreesat.dir/build.make CMakeFiles/sattothreesat.dir/src/SAT.cpp.i
+.PHONY : src/SAT.cpp.i
+
+src/SAT.s: src/SAT.cpp.s
+
+.PHONY : src/SAT.s
+
+# target to generate assembly for a file
+src/SAT.cpp.s:
+	$(MAKE) -f CMakeFiles/sattothreesat.dir/build.make CMakeFiles/sattothreesat.dir/src/SAT.cpp.s
+.PHONY : src/SAT.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -150,6 +177,33 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/sattothreesat.dir/build.make CMakeFiles/sattothreesat.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/parserCNF.o: src/parserCNF.cpp.o
+
+.PHONY : src/parserCNF.o
+
+# target to build an object file
+src/parserCNF.cpp.o:
+	$(MAKE) -f CMakeFiles/sattothreesat.dir/build.make CMakeFiles/sattothreesat.dir/src/parserCNF.cpp.o
+.PHONY : src/parserCNF.cpp.o
+
+src/parserCNF.i: src/parserCNF.cpp.i
+
+.PHONY : src/parserCNF.i
+
+# target to preprocess a source file
+src/parserCNF.cpp.i:
+	$(MAKE) -f CMakeFiles/sattothreesat.dir/build.make CMakeFiles/sattothreesat.dir/src/parserCNF.cpp.i
+.PHONY : src/parserCNF.cpp.i
+
+src/parserCNF.s: src/parserCNF.cpp.s
+
+.PHONY : src/parserCNF.s
+
+# target to generate assembly for a file
+src/parserCNF.cpp.s:
+	$(MAKE) -f CMakeFiles/sattothreesat.dir/build.make CMakeFiles/sattothreesat.dir/src/parserCNF.cpp.s
+.PHONY : src/parserCNF.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -159,9 +213,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... sattothreesat"
+	@echo "... src/SAT.o"
+	@echo "... src/SAT.i"
+	@echo "... src/SAT.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/parserCNF.o"
+	@echo "... src/parserCNF.i"
+	@echo "... src/parserCNF.s"
 .PHONY : help
 
 

@@ -3,4 +3,8 @@
 
 CMakeFiles/sattothreesat.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/sattothreesat.dir/src/main.cpp.o: ../src/main.h
+CMakeFiles/sattothreesat.dir/src/main.cpp.o: ../src/parserCNF.h
+
+CMakeFiles/sattothreesat.dir/src/parserCNF.cpp.o: ../src/parserCNF.cpp
+CMakeFiles/sattothreesat.dir/src/parserCNF.cpp.o: ../src/parserCNF.h
 
