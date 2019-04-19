@@ -1,1 +1,4 @@
-CMakeLists.txt not found in /cs/home/locw/Documents/CS3052/CS3052-P02-Reductions
+/cs/home/locw/Downloads/CLion/clion-2017.3/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /cs/home/locw/Documents/CS3052/CS3052-P02-Reductions
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug
