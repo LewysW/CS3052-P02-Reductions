@@ -17,27 +17,28 @@ SAT::SAT(vector<string> file) {
     string clauseStr;
     //Combines all of the clauses into a single string
     for (auto it = pos + 1; it != file.end(); it++) {
-        clauseStr += *it;
+        clauseStr += *it + " ";
     }
 
     //Tokenises the clause string into variables and conjunctions
     vector<string> clauseTokens = ParserCNF::tokenizeLine(clauseStr);
 
+    //TODO - account for 1 or 0 clauses
     //Parses the clause tokens into clause object, removing conjunctions
     auto* clause = new Clause;
     for (auto it = clauseTokens.begin(); it != clauseTokens.end(); it++) {
         if (*it != "0") {
             clause->getVars().push_back(*it);
-            cout << *it << endl;
         } else {
-            clauses.push_back(*clause);
-            clause = new Clause;
+            if (it + 1 != clauseTokens.end()) {
+                clauses.push_back(*clause);
+                clause = new Clause;
+            }
         }
     }
 
     clauses.push_back(*clause);
 
-    cout << "GETS HERE" << endl;
     printClauses();
 }
 

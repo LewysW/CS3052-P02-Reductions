@@ -7,6 +7,8 @@
 #include <iostream>
 #include <cstring>
 #include "parserCNF.h"
+#define EMPTY_FILE -4
+
 using namespace std;
 
 bool endsWith(std::string str, std::string suffix);

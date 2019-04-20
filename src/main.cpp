@@ -13,6 +13,7 @@ int main(int argc, char* argv[]) {
         ParserCNF parser;
         vector<string> file = parser.readInput();
 
+        if (file.empty()) return EMPTY_FILE;
 
         if ((valid = parser.validFile(file)) != 0) {
             cout << "NOT VALID: " << valid << endl;
