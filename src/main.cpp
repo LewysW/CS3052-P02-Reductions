@@ -16,12 +16,14 @@ int main(int argc, char* argv[]) {
         if (file.empty()) return EMPTY_FILE;
 
         if ((valid = parser.validFile(file)) != 0) {
+            //TODO - remove error message before submission
             cout << "NOT VALID: " << valid << endl;
             return valid;
         }
 
         SAT sat(file);
-
+        SAT threeSAT = *sat.to3SAT();
+        threeSAT.print();
     } else if (endsWith(execStr, "coltosat")) {
         cout << "coltosat" << endl;
     } else if (endsWith(execStr, "threesattocol")) {

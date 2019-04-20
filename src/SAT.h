@@ -17,7 +17,10 @@ using namespace std;
 
 class SAT {
 public:
+    explicit SAT();
     explicit SAT(vector<string> file);
+
+    SAT* to3SAT();
 
     vector<Clause>& getClauses();
 
@@ -27,7 +30,7 @@ public:
 
     int getNumClauses() const;
 
-    void printClauses();
+    void print();
 
     void setNumVars(int numVars);
 

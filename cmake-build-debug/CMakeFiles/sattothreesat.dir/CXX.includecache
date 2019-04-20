@@ -6,53 +6,29 @@
 
 #IncludeRegexTransform: 
 
-/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/SAT.cpp
+/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/src/SAT.cpp
 SAT.h
-/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/SAT.h
+/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/src/SAT.h
 
-/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/SAT.h
+/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/src/SAT.h
 vector
 -
 string
 -
 parserCNF.h
-/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/parserCNF.h
+/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/src/parserCNF.h
 clause.h
-/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/clause.h
+/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/src/clause.h
 vector
 -
 
-/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/clause.cpp
-clause.h
-/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/clause.h
-
-/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/clause.h
+/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/src/clause.h
 string
 -
 vector
 -
 
-/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/main.cpp
-main.h
-/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/main.h
-SAT.h
-/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/SAT.h
-
-/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/main.h
-iostream
--
-cstring
--
-parserCNF.h
-/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/parserCNF.h
-
-/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/parserCNF.cpp
-parserCNF.h
-/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/parserCNF.h
-SAT.h
-/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/SAT.h
-
-/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/parserCNF.h
+/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/src/parserCNF.h
 iostream
 -
 vector

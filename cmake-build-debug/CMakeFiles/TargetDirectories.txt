@@ -1,3 +1,3 @@
-/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/CMakeFiles/edit_cache.dir
-/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/CMakeFiles/sattothreesat.dir
+/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/cmake-build-debug/CMakeFiles/sattothreesat.dir
+/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/cmake-build-debug/CMakeFiles/edit_cache.dir

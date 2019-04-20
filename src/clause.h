@@ -13,6 +13,8 @@ class Clause {
 public:
     vector<string> &getVars();
 
+    void setVars(const vector<string> &vars);
+
 private:
     vector<string> vars;
 };
