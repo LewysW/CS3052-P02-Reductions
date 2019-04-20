@@ -12,9 +12,15 @@ int main(int argc, char* argv[]) {
     if (endsWith(execStr, "sattothreesat")) {
         ParserCNF parser;
         vector<string> file = parser.readInput();
-        valid = parser.validFile(file);
-        SAT sat(execStr);
-        printFile(file);
+
+
+        if ((valid = parser.validFile(file)) != 0) {
+            cout << "NOT VALID: " << valid << endl;
+            return valid;
+        }
+
+        SAT sat(file);
+
     } else if (endsWith(execStr, "coltosat")) {
         cout << "coltosat" << endl;
     } else if (endsWith(execStr, "threesattocol")) {

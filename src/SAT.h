@@ -10,6 +10,7 @@
 #include <vector>
 #include <string>
 #include "parserCNF.h"
+#include "clause.h"
 #include <vector>
 
 using namespace std;
@@ -18,23 +19,23 @@ class SAT {
 public:
     explicit SAT(vector<string> file);
 
-    const vector<vector<string>> &SAT::getClauses();
+    vector<Clause>& getClauses();
 
-    void setClauses(const vector<vector<string>> &clauses);
+    void setClauses(vector<Clause> &clauses);
 
     int getNumVars() const;
 
     int getNumClauses() const;
 
+    void printClauses();
+
     void setNumVars(int numVars);
 
     void setNumClauses(int numClauses);
-
-    vector<string> ParserCNF::tokenizeLine(string line);
 private:
     int numVars;
     int numClauses;
-    vector<vector<string>> clauses;
+    vector<Clause> clauses;
 };
 
 #endif //CS3052_P02_REDUCTIONS_SAT_H

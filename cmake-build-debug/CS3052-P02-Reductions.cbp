@@ -86,6 +86,12 @@
 		<Unit filename="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/SAT.h">
 			<Option target="sattothreesat"/>
 		</Unit>
+		<Unit filename="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/clause.cpp">
+			<Option target="sattothreesat"/>
+		</Unit>
+		<Unit filename="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/clause.h">
+			<Option target="sattothreesat"/>
+		</Unit>
 		<Unit filename="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/main.cpp">
 			<Option target="sattothreesat"/>
 		</Unit>

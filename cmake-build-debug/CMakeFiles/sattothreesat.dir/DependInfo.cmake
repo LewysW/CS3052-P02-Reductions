@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/SAT.cpp" "/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/CMakeFiles/sattothreesat.dir/src/SAT.cpp.o"
+  "/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/clause.cpp" "/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/CMakeFiles/sattothreesat.dir/src/clause.cpp.o"
   "/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/main.cpp" "/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/CMakeFiles/sattothreesat.dir/src/main.cpp.o"
   "/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/parserCNF.cpp" "/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/CMakeFiles/sattothreesat.dir/src/parserCNF.cpp.o"
   )

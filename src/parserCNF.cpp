@@ -64,6 +64,9 @@ int ParserCNF::validFile(vector<string>& file) {
     for (auto it = pos + 1; it != file.end(); it++) {
         line = tokenizeLine(*it);
 
+        //Validates against empty lines
+        if (line.empty()) return INVALID_CLAUSES;
+
         //Iterates through each line in the series of clauses
         for (auto it1 = line.begin(); it1 != line.end(); it1++) {
             //Validates the number of variables
@@ -73,13 +76,20 @@ int ParserCNF::validFile(vector<string>& file) {
                 //Validates the number of clauses
                 if (it != file.end() && it1 != line.end()) {
                     clauseCount++;
-
-                    if (clauseCount > numClauses) return INVALID_CLAUSES;
+                    if (clauseCount > numClauses) {
+                        return INVALID_CLAUSES;
+                    }
                 }
             }
         }
+
+        //Increments number of clauses if not ending in a 0
+        if (it + 1 == file.end() && line.at(line.size() - 1) != "0") {
+            clauseCount++;
+        }
     }
 
+    //Validates against too few clauses
     if (clauseCount < numClauses) return INVALID_CLAUSES;
 
     return 0;

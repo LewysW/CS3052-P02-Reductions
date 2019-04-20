@@ -150,6 +150,33 @@ src/SAT.cpp.s:
 	$(MAKE) -f CMakeFiles/sattothreesat.dir/build.make CMakeFiles/sattothreesat.dir/src/SAT.cpp.s
 .PHONY : src/SAT.cpp.s
 
+src/clause.o: src/clause.cpp.o
+
+.PHONY : src/clause.o
+
+# target to build an object file
+src/clause.cpp.o:
+	$(MAKE) -f CMakeFiles/sattothreesat.dir/build.make CMakeFiles/sattothreesat.dir/src/clause.cpp.o
+.PHONY : src/clause.cpp.o
+
+src/clause.i: src/clause.cpp.i
+
+.PHONY : src/clause.i
+
+# target to preprocess a source file
+src/clause.cpp.i:
+	$(MAKE) -f CMakeFiles/sattothreesat.dir/build.make CMakeFiles/sattothreesat.dir/src/clause.cpp.i
+.PHONY : src/clause.cpp.i
+
+src/clause.s: src/clause.cpp.s
+
+.PHONY : src/clause.s
+
+# target to generate assembly for a file
+src/clause.cpp.s:
+	$(MAKE) -f CMakeFiles/sattothreesat.dir/build.make CMakeFiles/sattothreesat.dir/src/clause.cpp.s
+.PHONY : src/clause.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -216,6 +243,9 @@ help:
 	@echo "... src/SAT.o"
 	@echo "... src/SAT.i"
 	@echo "... src/SAT.s"
+	@echo "... src/clause.o"
+	@echo "... src/clause.i"
+	@echo "... src/clause.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
