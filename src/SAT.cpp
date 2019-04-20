@@ -14,6 +14,8 @@ SAT::SAT(vector<string> file) {
         }
     }
 
+    if (getNumClauses() == 0) return;
+
     string clauseStr;
     //Combines all of the clauses into a single string
     for (auto it = pos + 1; it != file.end(); it++) {
@@ -38,7 +40,6 @@ SAT::SAT(vector<string> file) {
     }
 
     clauses.push_back(*clause);
-
     printClauses();
 }
 
