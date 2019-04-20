@@ -63,6 +63,7 @@ int ParserCNF::validFile(vector<string>& file) {
     //Iterates over each line of clauses
     for (auto it = pos + 1; it != file.end(); it++) {
         line = tokenizeLine(*it);
+        cout << "LINE SIZE: " << line.size() << endl;
 
         //Validates against empty lines
         if (line.empty()) return INVALID_CLAUSES;
@@ -74,7 +75,7 @@ int ParserCNF::validFile(vector<string>& file) {
                 return INVALID_CLAUSES;
             } else if (*it1 == "0") {
                 //Validates the number of clauses
-                if (it != file.end() && it1 != line.end()) {
+                if (it != file.end()) {
                     clauseCount++;
                     if (clauseCount > numClauses) {
                         return INVALID_CLAUSES;
@@ -82,6 +83,8 @@ int ParserCNF::validFile(vector<string>& file) {
                 }
             }
         }
+
+        cout << "clauseCount: " << clauseCount << endl;
 
         //Increments number of clauses if not ending in a 0
         if (it + 1 == file.end() && line.at(line.size() - 1) != "0") {
