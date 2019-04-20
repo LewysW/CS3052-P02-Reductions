@@ -44,52 +44,40 @@ SAT::SAT(vector<string> file) {
 }
 
 SAT* SAT::to3SAT() {
-    SAT* threeSAT = new SAT;
+    auto* threeSAT = new SAT;
     vector<Clause> tempClauses = getClauses();
     threeSAT->setNumVars(getNumVars());
+    string var;
 
-    //Iterates through each clause
-    for (auto clause = tempClauses.begin(); clause != tempClauses.end(); clause++) {
-        //If size of clause is greater than 3 variables, beginning resizing process
-        if (clause->getVars().size() > 3) {
-            string var;
-            //Loops while clause greater than 3
-            for (auto variable = clause->getVars().end() - 1; clause->getVars().size() > 2; variable--) {
-                //Copies the variable in the clause and removes it from the clause
-                var = *variable;
-                cout << "var: " << var << endl;
-                clause->getVars().pop_back();
+    //Used integer loop instead of iterator due to iterator invalidation
+    for (unsigned int c = 0; c < tempClauses.size(); c++) {
+        //Checks if a clause has more than 3 literals
+        if (tempClauses[c].getVars().size() > 3) {
 
-                //If there is a subsequent clause in the list, move variables there
-                if (clause + 1 != tempClauses.end()) {
-                    (clause + 1)->getVars().insert((clause + 1)->getVars().begin(), var);
-                //If new clause has to be created, move variable there
+            //Loops until the clause has been reduced to 2 literals
+            while (tempClauses[c].getVars().size() > 2) {
+                //Checks that there are subsequent clauses to move variables to
+                if ((c + 1) < tempClauses.size()) {
+                    var = tempClauses[c].getVars().back();
+                    tempClauses[c + 1].getVars().insert(tempClauses[c + 1].getVars().begin(), var);
+                //Otherwise make a new clause to move variables to
                 } else {
-                    Clause newClause;
+                    Clause clause;
                     vector<string> vars;
-                    vars.insert(vars.begin(), var);
-                    newClause.setVars(vars);
-                    tempClauses.push_back(newClause);
+                    vars.insert(vars.begin(), tempClauses[c].getVars().back());
+                    tempClauses.insert(tempClauses.end(), clause);
                 }
+                //Remove variable from end of clause
+                tempClauses[c].getVars().pop_back();
             }
-            //Creates new variable
-            long newVar = threeSAT->getNumVars() + 1;
 
-            //Inserts new variable at end of current clause and negation of that variable at beginning of next clause
-            clause->getVars().push_back(to_string(newVar));
-
-            //TODO - fix the segfault on this line
-            (clause + 1)->getVars().insert((clause + 1)->getVars().begin(), to_string(-1 * newVar));
-            //Resizes number of variables in threeSAT
+            //Creates new variable and increases number of variables in threeSAT
+            int newVar = threeSAT->getNumVars() + 1;
             threeSAT->setNumVars(threeSAT->getNumVars() + 1);
-        }
 
-        for (auto it = tempClauses.begin(); it != tempClauses.end(); it++) {
-            for (auto it1 = it->getVars().begin(); it1 != it->getVars().end(); it1++) {
-                cout << *it1 << " ";
-            }
-
-            cout << "0 ";
+            //Adds variable to end of current clause and negation to beginning of next clause
+            tempClauses[c].getVars().push_back(to_string(newVar));
+            tempClauses[c + 1].getVars().insert(tempClauses[c + 1].getVars().begin(), to_string(-1 * newVar));
         }
     }
 
