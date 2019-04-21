@@ -60,12 +60,14 @@ SAT* SAT::to3SAT() {
                 if ((c + 1) < tempClauses.size()) {
                     var = tempClauses[c].getVars().back();
                     tempClauses[c + 1].getVars().insert(tempClauses[c + 1].getVars().begin(), var);
-                //Otherwise make a new clause to move variables to
+
+                //Otherwise make a new clause to move variables to and add to list of clauses
                 } else {
                     Clause clause;
                     vector<string> vars;
                     vars.insert(vars.begin(), tempClauses[c].getVars().back());
-                    tempClauses.insert(tempClauses.end(), clause);
+                    clause.setVars(vars);
+                    tempClauses.push_back(clause);
                 }
                 //Remove variable from end of clause
                 tempClauses[c].getVars().pop_back();

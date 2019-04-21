@@ -14,6 +14,7 @@
 #define INVALID_PREAMBLE (-1)
 #define INVALID_PROBLEM_LINE (-2)
 #define INVALID_CLAUSES (-3)
+#define BASE_TEN 10
 
 
 using namespace std;

@@ -60,44 +60,39 @@ int ParserCNF::validFile(vector<string>& file) {
     int numClauses = stoi(line[3]);
     int clauseCount = 0;
 
-    //Iterates over each line of clauses
+    string clauses;
     for (auto it = pos + 1; it != file.end(); it++) {
-        line = tokenizeLine(*it);
-        cout << "LINE SIZE: " << line.size() << endl;
+        if (it->empty()) return INVALID_CLAUSES;
+        clauses += *it + " ";
+    }
 
-        //Validates against empty lines
-        if (line.empty()) return INVALID_CLAUSES;
+    line = tokenizeLine(clauses);
+    int token = 0;
 
-        //Iterates through each line in the series of clauses
-        for (auto it1 = line.begin(); it1 != line.end(); it1++) {
-            //Validates the number of variables
-            if (!is_digits(*it1) || abs(stoi(*it1)) > numVars) {
-                return INVALID_CLAUSES;
-            } else if (*it1 == "0") {
-                //Validates the number of clauses
-                if (it != file.end()) {
-                    clauseCount++;
-                    if (clauseCount > numClauses) {
-                        return INVALID_CLAUSES;
-                    }
-                }
-            }
-        }
+    for (auto it = line.begin(); it != line.end(); it++) {
+        size_t numConverted;
+        token = stoi(*it, &numConverted, BASE_TEN);
 
-        cout << "clauseCount: " << clauseCount << endl;
-
-        //Increments number of clauses if not ending in a 0
-        if (it + 1 == file.end() && line.at(line.size() - 1) != "0") {
+        if (numConverted != it->size() || (numConverted == it->size() && abs(token) > numVars)) {
+            return INVALID_CLAUSES;
+        } else if (token == 0) {
             clauseCount++;
         }
     }
 
+    if (token != 0) numClauses++;
+
     //Validates against too few clauses
-    if (clauseCount < numClauses) return INVALID_CLAUSES;
+    if (clauseCount < numClauses || clauseCount > numClauses) return INVALID_CLAUSES;
 
     return 0;
 }
 
+/**
+ * Tokenizes a line into a vector of strings
+ * @param line - to tokenize
+ * @return tokenized line
+ */
 vector<string> ParserCNF::tokenizeLine(string line) {
     vector<string> tokens;
     stringstream checkStream(line);
