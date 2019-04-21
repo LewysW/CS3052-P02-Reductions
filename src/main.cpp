@@ -30,6 +30,7 @@ int main(int argc, char* argv[]) {
 
         COL col(file);
         SAT sat = *col.toSAT();
+        sat.print();
 
     } else if (endsWith(execStr, "threesattocol")) {
         cout << "threesattocol" << endl;

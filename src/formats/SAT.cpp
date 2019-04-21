@@ -10,7 +10,7 @@ SAT::SAT(vector<string> file) {
         if (it[0][0] == 'p') {
             vector<string> line = ParserCNF::tokenizeLine(*it);
             setNumVars(stoi(line[NUM_VARIABLE_INDEX]));
-            setNumClauses(stoi(line[NUM_CLAUSE_INDEX]));
+            setNumClauses((unsigned long) stoi(line[NUM_CLAUSE_INDEX]));
             pos = it;
             break;
         }
@@ -107,7 +107,7 @@ int SAT::getNumVars() const {
     return numVars;
 }
 
-int SAT::getNumClauses() const {
+unsigned long SAT::getNumClauses() const {
     return numClauses;
 }
 
@@ -115,7 +115,7 @@ void SAT::setNumVars(int numVars) {
     SAT::numVars = numVars;
 }
 
-void SAT::setNumClauses(int numClauses) {
+void SAT::setNumClauses(unsigned long numClauses) {
     SAT::numClauses = numClauses;
 }
 

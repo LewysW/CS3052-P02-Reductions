@@ -28,16 +28,16 @@ public:
 
     int getNumVars() const;
 
-    int getNumClauses() const;
+    unsigned long getNumClauses() const;
 
     void print();
 
     void setNumVars(int numVars);
 
-    void setNumClauses(int numClauses);
+    void setNumClauses(unsigned long numClauses);
 private:
     int numVars;
-    int numClauses;
+    unsigned long numClauses;
     vector<Clause> clauses;
 };
 
