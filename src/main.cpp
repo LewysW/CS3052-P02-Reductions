@@ -21,17 +21,15 @@ int main(int argc, char* argv[]) {
         SAT threeSAT = *sat.to3SAT();
         threeSAT.print();
     } else if (endsWith(execStr, "coltosat")) {
-        cout << "coltosat" << endl;
         ParserCOL parser;
         vector<string> file = parser.readInput();
 
         if (file.empty()) return EMPTY_FILE;
 
-        if ((valid = parser.validFile(file)) != 0) {
-            cout << valid << endl;
-            return valid;
-        }
+        if ((valid = parser.validFile(file)) != 0) return valid;
 
+        COL col(file);
+        SAT sat = *col.toSAT();
 
     } else if (endsWith(execStr, "threesattocol")) {
         cout << "threesattocol" << endl;

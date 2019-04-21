@@ -9,7 +9,8 @@
 #include "parsers/parserCNF.h"
 #include "parsers/parserCOL.h"
 #include "formats/SAT.h"
-#define EMPTY_FILE -4
+#include "formats/COL.h"
+#define EMPTY_FILE (-4)
 
 using namespace std;
 

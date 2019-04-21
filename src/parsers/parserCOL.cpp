@@ -27,7 +27,6 @@ int ParserCOL::validFile(vector<string>& file) {
 
     //Iterate through comments
     for (auto it = file.begin(); it != file.end(); it++) {
-        cout << *it << endl;
         line = tokenizeLine(*it);
 
         if (line.empty()) continue;
@@ -66,7 +65,6 @@ int ParserCOL::validFile(vector<string>& file) {
         if (line.size() != NUM_COLOUR_TOKENS || line.front() != "colours" || !is_digits(line.back()) || line.back() == "0") {
             return INVALID_COLOURS;
         } else {
-            cout << *it << endl;
             pos = it;
             break;
         }
@@ -99,7 +97,6 @@ int ParserCOL::validFile(vector<string>& file) {
                 return INVALID_EDGES;
             } else {
                 edges.insert(edge);
-                cout << "e " << edge.first << " " << edge.second << endl;
             }
         //Otherwise line is not valid
         } else {
