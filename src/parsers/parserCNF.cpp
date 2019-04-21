@@ -3,7 +3,6 @@
 //
 
 #include "parserCNF.h"
-#include "SAT.h"
 
 /**
  * Reads in stdio file line by line
@@ -21,7 +20,7 @@ vector<string> ParserCNF::readInput() {
 }
 
 /**
- * Validates a SAT CNF file
+ * Validates a DIMACS SAT CNF file
  * @param file - to validate
  * @return 0 if file is valid or an error code if not
  */
@@ -31,7 +30,9 @@ int ParserCNF::validFile(vector<string>& file) {
 
     //Iterate through comments
     for (auto it = file.begin(); it != file.end(); it++) {
-        if ((*it).empty()) continue;
+        line = tokenizeLine(*it);
+
+        if (line.empty()) continue;
 
         //Checks if line is not a comment
         if (it[0][0] == 'p') {
@@ -46,13 +47,9 @@ int ParserCNF::validFile(vector<string>& file) {
     line = tokenizeLine(*pos);
 
     //Validates problem line
-    if (line.size() > PROBLEM_LINE_LENGTH || line.size() < PROBLEM_LINE_LENGTH) {
+    if (line.size() != PROBLEM_LINE_LENGTH || line[0] != "p" || line[1] != "cnf") {
         return INVALID_PROBLEM_LINE;
-    } else if (line[0] != "p") {
-        return INVALID_PROBLEM_LINE;
-    } else if (line[1] != "cnf") {
-        return INVALID_PROBLEM_LINE;
-    } else if (!is_digits(line[2]) || !is_digits(line[3])) {
+    } else if (!is_digits(line[2] + line[3]) || stoi(line[2]) < 0 || stoi(line[3]) < 0) {
         return INVALID_PROBLEM_LINE;
     }
 

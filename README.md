@@ -36,6 +36,38 @@ a comment or problem line
 
 THE CLAUSES - Multiple lines, each clause is terminated by the value 0 (representing ∧).
 	      Each variable is numbered from 1 to n. A negated variable is a negative number.
+
+DIMACS COL format:
+
+PREAMBLE - a series of lines beginning with a single character (c or p) to denote
+a comment or problem line
+
+	-Comments - Give human-readable information about the file and are ignored by programs,
+		    occur at beginning of preamble
+
+	-Problem line - There is one problem line per input file. Must appear before any node or arc descriptor lines. For CNF, has the following format:
+
+			p FORMAT NODES EDGES
+
+	
+			FORMAT should contain the word "edge"
+
+			NODES contains an integer specifying n, the number of nodes in the instance
+
+			EDGES contains an integer specifying m, the number of EDGES in the instance
+
+		The problem line should be the last line of the preamble
+
+	-Colours line - Takes following format:
+			COLOUR INTEGER
+
+		Colour line should be first non-whitespace line after problem line
+
+THE edges - format:
+		e W V
+
+		W is start point
+		V is end point
 --------------------------------------------------
 
 Task 1: Straightforward Reductions

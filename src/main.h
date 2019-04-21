@@ -6,7 +6,9 @@
 #define CS3052_P02_REDUCTIONS_MAIN_H
 #include <iostream>
 #include <cstring>
-#include "parserCNF.h"
+#include "parsers/parserCNF.h"
+#include "parsers/parserCOL.h"
+#include "formats/SAT.h"
 #define EMPTY_FILE -4
 
 using namespace std;

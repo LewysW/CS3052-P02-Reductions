@@ -8,107 +8,115 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/cmake-build-debug"/>
+				<Option working_dir="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/cmake-build-debug"/>
+				<Option working_dir="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="sattothreesat">
-				<Option output="/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/cmake-build-debug/sattothreesat" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 sattothreesat"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="sattothreesat/fast">
-				<Option output="/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/cmake-build-debug/sattothreesat" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 sattothreesat/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/cmake-build-debug"/>
+				<Option working_dir="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sattothreesat">
+				<Option output="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/sattothreesat" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 sattothreesat"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sattothreesat/fast">
+				<Option output="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/sattothreesat" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 sattothreesat/fast"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/src/SAT.cpp">
+		<Unit filename="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/formats/COL.cpp">
 			<Option target="sattothreesat"/>
 		</Unit>
-		<Unit filename="/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/src/SAT.h">
+		<Unit filename="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/formats/COL.h">
 			<Option target="sattothreesat"/>
 		</Unit>
-		<Unit filename="/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/src/clause.cpp">
+		<Unit filename="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/formats/SAT.cpp">
 			<Option target="sattothreesat"/>
 		</Unit>
-		<Unit filename="/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/src/clause.h">
+		<Unit filename="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/formats/SAT.h">
 			<Option target="sattothreesat"/>
 		</Unit>
-		<Unit filename="/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/src/main.cpp">
+		<Unit filename="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/formats/clause.cpp">
 			<Option target="sattothreesat"/>
 		</Unit>
-		<Unit filename="/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/src/main.h">
+		<Unit filename="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/formats/clause.h">
 			<Option target="sattothreesat"/>
 		</Unit>
-		<Unit filename="/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/src/parserCNF.cpp">
+		<Unit filename="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/main.cpp">
 			<Option target="sattothreesat"/>
 		</Unit>
-		<Unit filename="/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/src/parserCNF.h">
+		<Unit filename="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/main.h">
 			<Option target="sattothreesat"/>
 		</Unit>
-		<Unit filename="/home/lewys/Documents/Practicals/CS3052/CS3052-P02-Reductions/CMakeLists.txt">
+		<Unit filename="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/parsers/parserCNF.cpp">
+			<Option target="sattothreesat"/>
+		</Unit>
+		<Unit filename="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/parsers/parserCNF.h">
+			<Option target="sattothreesat"/>
+		</Unit>
+		<Unit filename="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/parsers/parserCOL.cpp">
+			<Option target="sattothreesat"/>
+		</Unit>
+		<Unit filename="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/src/parsers/parserCOL.h">
+			<Option target="sattothreesat"/>
+		</Unit>
+		<Unit filename="/cs/home/locw/Documents/CS3052/CS3052-P02-Reductions/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

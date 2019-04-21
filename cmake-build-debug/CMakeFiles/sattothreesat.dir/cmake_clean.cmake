@@ -1,8 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/sattothreesat.dir/src/main.cpp.o"
-  "CMakeFiles/sattothreesat.dir/src/parserCNF.cpp.o"
-  "CMakeFiles/sattothreesat.dir/src/SAT.cpp.o"
-  "CMakeFiles/sattothreesat.dir/src/clause.cpp.o"
+  "CMakeFiles/sattothreesat.dir/src/parsers/parserCNF.cpp.o"
+  "CMakeFiles/sattothreesat.dir/src/formats/SAT.cpp.o"
+  "CMakeFiles/sattothreesat.dir/src/formats/clause.cpp.o"
+  "CMakeFiles/sattothreesat.dir/src/parsers/parserCOL.cpp.o"
+  "CMakeFiles/sattothreesat.dir/src/formats/COL.cpp.o"
   "sattothreesat.pdb"
   "sattothreesat"
 )

@@ -1,5 +1,5 @@
 #include "main.h"
-#include "SAT.h"
+
 
 //TODO - remove comments before printing
 
@@ -15,17 +15,24 @@ int main(int argc, char* argv[]) {
 
         if (file.empty()) return EMPTY_FILE;
 
-        if ((valid = parser.validFile(file)) != 0) {
-            //TODO - remove error message before submission
-            cout << "NOT VALID: " << valid << endl;
-            return valid;
-        }
+        if ((valid = parser.validFile(file)) != 0) return valid;
 
         SAT sat(file);
         SAT threeSAT = *sat.to3SAT();
         threeSAT.print();
     } else if (endsWith(execStr, "coltosat")) {
         cout << "coltosat" << endl;
+        ParserCOL parser;
+        vector<string> file = parser.readInput();
+
+        if (file.empty()) return EMPTY_FILE;
+
+        if ((valid = parser.validFile(file)) != 0) {
+            cout << valid << endl;
+            return valid;
+        }
+
+
     } else if (endsWith(execStr, "threesattocol")) {
         cout << "threesattocol" << endl;
     }

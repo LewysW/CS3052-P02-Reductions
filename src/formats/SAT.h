@@ -9,7 +9,7 @@
 
 #include <vector>
 #include <string>
-#include "parserCNF.h"
+#include "../parsers/parserCNF.h"
 #include "clause.h"
 #include <vector>
 
