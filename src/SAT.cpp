@@ -53,23 +53,12 @@ SAT* SAT::to3SAT() {
     for (unsigned int c = 0; c < tempClauses.size(); c++) {
         //Checks if a clause has more than 3 literals
         if (tempClauses[c].getVars().size() > 3) {
+            Clause clause;
+            vector<string> vars;
 
             //Loops until the clause has been reduced to 2 literals
             while (tempClauses[c].getVars().size() > 2) {
-                //Checks that there are subsequent clauses to move variables to
-                if ((c + 1) < tempClauses.size()) {
-                    var = tempClauses[c].getVars().back();
-                    tempClauses[c + 1].getVars().insert(tempClauses[c + 1].getVars().begin(), var);
-
-                //Otherwise make a new clause to move variables to and add to list of clauses
-                } else {
-                    Clause clause;
-                    vector<string> vars;
-                    vars.insert(vars.begin(), tempClauses[c].getVars().back());
-                    clause.setVars(vars);
-                    tempClauses.push_back(clause);
-                }
-                //Remove variable from end of clause
+                vars.insert(vars.begin(), tempClauses[c].getVars().back());
                 tempClauses[c].getVars().pop_back();
             }
 
@@ -79,7 +68,11 @@ SAT* SAT::to3SAT() {
 
             //Adds variable to end of current clause and negation to beginning of next clause
             tempClauses[c].getVars().push_back(to_string(newVar));
-            tempClauses[c + 1].getVars().insert(tempClauses[c + 1].getVars().begin(), to_string(-1 * newVar));
+            vars.insert(vars.begin(), to_string(newVar * -1));
+
+            //Sets variables of new clause and adds new clause to list
+            clause.setVars(vars);
+            tempClauses.insert(tempClauses.begin() + c + 1, clause);
         }
     }
 
