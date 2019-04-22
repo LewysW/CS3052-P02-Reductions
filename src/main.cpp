@@ -1,8 +1,5 @@
 #include "main.h"
 
-
-//TODO - remove comments before printing
-
 int main(int argc, char* argv[]) {
     if (argc > 1) return 0;
 
@@ -17,9 +14,12 @@ int run(string execName) {
         ParserCNF parser;
         vector<string> file = parser.readInput();
 
-        if (file.empty()) return EMPTY_FILE;
-
-        if ((isValid = parser.validFile(file)) != 0) return isValid;
+        //Validates against malformed input
+        if (file.empty()) {
+            return EMPTY_FILE;
+        } else if ((isValid = parser.validFile(file)) != 0) {
+            return isValid;
+        }
 
         SAT sat(file);
         SAT threeSAT = *sat.to3SAT();
@@ -28,9 +28,12 @@ int run(string execName) {
         ParserCOL parser;
         vector<string> file = parser.readInput();
 
-        if (file.empty()) return EMPTY_FILE;
-
-        if ((isValid = parser.validFile(file)) != 0) return isValid;
+        //Validates against malformed input
+        if (file.empty()) {
+            return EMPTY_FILE;
+        } else if ((isValid = parser.validFile(file)) != 0) {
+            return isValid;
+        }
 
         COL col(file);
         SAT sat = *col.toSAT();
@@ -41,14 +44,25 @@ int run(string execName) {
         ParserCNF parser;
         vector<string> file = parser.readInput();
 
-        if (file.empty()) return EMPTY_FILE;
-
-        if ((isValid = parser.validFile(file)) != 0) return isValid;
+        //Validates against malformed input
+        if (file.empty()) {
+            return EMPTY_FILE;
+        } else if ((isValid = parser.validFile(file)) != 0) {
+            return isValid;
+        }
 
         SAT sat(file);
 
+        //Rejects if not in 3SAT
         if (!sat.is3SAT()) return NOT_3SAT;
-        
+
+        //Adds variables if there are less than 4
+        if (sat.getNumVars() <= 3) sat.setNumVars(4);
+
+        COL col = *sat.toKCOL();
+        col.print();
+    } else {
+        return EXEC_NOT_RECOGNISED;
     }
 
     return isValid;
@@ -68,10 +82,4 @@ bool endsWith(std::string str, std::string suffix) {
         return false;
 
     return str.substr(str.length() - suffix.length()) == suffix;
-}
-
-void printFile(vector<string>& file) {
-    for (auto it = file.begin(); it != file.end(); it++) {
-        cout << *it;
-    }
 }

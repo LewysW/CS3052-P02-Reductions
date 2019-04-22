@@ -1,7 +1,3 @@
-//
-// Created by locw on 19/04/19.
-//
-
 #ifndef CS3052_P02_REDUCTIONS_SAT_H
 #define CS3052_P02_REDUCTIONS_SAT_H
 #define NUM_VARIABLE_INDEX 2
@@ -12,6 +8,10 @@
 #include "../parsers/parserCNF.h"
 #include "clause.h"
 #include <vector>
+#include "COL.h"
+
+
+class COL;
 
 using namespace std;
 
@@ -22,6 +22,8 @@ public:
 
     SAT* to3SAT();
     bool is3SAT();
+
+    COL* toKCOL();
 
     vector<Clause>& getClauses();
 

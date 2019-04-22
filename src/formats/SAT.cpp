@@ -43,6 +43,10 @@ SAT::SAT(vector<string> file) {
     clauses.push_back(*clause);
 }
 
+/**
+ * Converts SAT object from SAT to 3SAT
+ * @return - SAT object complying with constraints of 3SAT
+ */
 SAT* SAT::to3SAT() {
     auto* threeSAT = new SAT;
     vector<Clause> tempClauses = getClauses();
@@ -82,6 +86,61 @@ SAT* SAT::to3SAT() {
     return threeSAT;
 }
 
+COL* SAT::toKCOL() {
+    int n = getNumVars();
+    unsigned long k = getNumClauses();
+    auto* col = new COL;
+    vector<pair<int, int>> tempEdges;
+
+    //Sets the k colour value of col
+    col->setK(n + 1);
+
+    //Sets the number of vertices (nodes)
+    //TODO - Refactor num clauses to be an int
+    col->setNumNodes(3 * n + k);
+
+    //Each vertex xi is joined to ¬xi
+    for (int i = 1; i <= n; i++) {
+        tempEdges.emplace_back(make_pair(i, i + n));
+    }
+
+    //Each vertex yi is joined to every other yj
+    for (int i = 2*n + 1; i <= (2*n + n); i++) {
+        for (int j = i + 1; j < (2*n + n); j++) {
+            tempEdges.emplace_back(i, j);
+        }
+    }
+
+    //Each vertex yi is joined to xj and ¬xj provided j != i
+    for (int i = 2*n + 1; i <= (2*n + n); i++) {
+        for (int j = 1; j <= 2*n; j++) {
+            //Checks that j != i for each vertex yi joining to xj and ¬xj
+            if ((i % n) != (j % n)) {
+                tempEdges.emplace_back(make_pair(i, j));
+            }
+        }
+    }
+
+    //Each vertex Ci is joined to each literal xj or ¬xj which is is not in clause i
+    for (unsigned int i = 1; i <= k; i++) {
+        vector<string> vars = getClauses()[i - 1].getVars();
+        for (int j = 1; j <= 2*n; j++) {
+            if (find(vars.begin(), vars.end(), to_string(j)) == vars.end()) {
+                tempEdges.emplace_back(make_pair(i, j));
+            }
+        }
+    }
+
+    col->setNumEdges(tempEdges.size());
+    col->setEdges(tempEdges);
+
+    return col;
+}
+
+/**
+ * Checks if SAT object is in 3SAT
+ * @return - whether or not SAT object is in 3SAT
+ */
 bool SAT::is3SAT() {
     for (auto it = getClauses().begin(); it != getClauses().end(); it++) {
         if (it->getVars().size() > 3) {

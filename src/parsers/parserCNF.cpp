@@ -1,7 +1,3 @@
-//
-// Created by locw on 19/04/19.
-//
-
 #include "parserCNF.h"
 
 /**

@@ -1,7 +1,3 @@
-//
-// Created by locw on 21/04/19.
-//
-
 #ifndef CS3052_P02_REDUCTIONS_COL_H
 #define CS3052_P02_REDUCTIONS_COL_H
 
@@ -12,6 +8,8 @@
 #define NUM_EDGES_INDEX 3
 #define FIRST_NODE 1
 #define SECOND_NODE 2
+
+class SAT;
 
 using namespace std;
 

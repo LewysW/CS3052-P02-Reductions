@@ -1,7 +1,3 @@
-//
-// Created by locw on 20/04/19.
-//
-
 #ifndef CS3052_P02_REDUCTIONS_CLAUSE_H
 #define CS3052_P02_REDUCTIONS_CLAUSE_H
 #include <string>
