@@ -1,7 +1,14 @@
 #include "SAT.h"
 
+/**
+ * Default constructor
+ */
 SAT::SAT() = default;
 
+/**
+ * Constructor for SAT object
+ * @param file - validated input file to represent SAT object
+ */
 SAT::SAT(vector<string> file) {
     vector<string>::iterator pos;
 
@@ -80,13 +87,19 @@ SAT* SAT::to3SAT() {
         }
     }
 
+    //Assigns the list of clauses and number of clauses to 3-SAT object
     threeSAT->setClauses(tempClauses);
     threeSAT->setNumClauses(tempClauses.size());
 
     return threeSAT;
 }
 
+/**
+ * Converts the SAT object to k-COL
+ * @return a pointer to a COL object
+ */
 COL* SAT::toKCOL() {
+    //Stores the number of variables, number of clauses, COL object, and list of edges
     int n = getNumVars();
     unsigned long k = getNumClauses();
     auto* col = new COL;
@@ -96,7 +109,6 @@ COL* SAT::toKCOL() {
     col->setK(n + 1);
 
     //Sets the number of vertices (nodes)
-    //TODO - Refactor num clauses to be an int
     col->setNumNodes(3 * n + k);
 
     //Each vertex xi is joined to ¬xi
@@ -141,16 +153,11 @@ COL* SAT::toKCOL() {
         cout << endl;
     }
 
-
+    //Assigns the number of edges and list of edges to the COL object
     col->setNumEdges(tempEdges.size());
     col->setEdges(tempEdges);
 
     return col;
-}
-
-bool SAT::containsEdge(vector<pair<int, int>>& edges, int first, int second) {
-    return (find(edges.begin(), edges.end(), make_pair(first, second)) != edges.end())
-            || (find(edges.begin(), edges.end(), make_pair(second, first)) != edges.end());
 }
 
 /**
@@ -158,6 +165,7 @@ bool SAT::containsEdge(vector<pair<int, int>>& edges, int first, int second) {
  * @return - whether or not SAT object is in 3SAT
  */
 bool SAT::is3SAT() {
+    //Iterates through each clause in the SAT object and checks whether any clause has more than 3 variables
     for (auto it = getClauses().begin(); it != getClauses().end(); it++) {
         if (it->getVars().size() > 3) {
             return false;
@@ -167,14 +175,25 @@ bool SAT::is3SAT() {
     return true;
 }
 
+/**
+ * Setter for the list of clauses
+ * @param clauses - list of clauses to assign
+ */
 void SAT::setClauses(vector<Clause> &clauses) {
     SAT::clauses = clauses;
 }
 
+/**
+ * Getter for list of clauses
+ * @return - list of clauses
+ */
 vector<Clause> &SAT::getClauses() {
     return clauses;
 }
 
+/**
+ * Prints the SAT object
+ */
 void SAT::print() {
     cout << "p cnf " << getNumVars() << " " << getNumClauses() << endl;
 
@@ -187,18 +206,34 @@ void SAT::print() {
     }
 }
 
+/**
+ * Getter for the number of variables
+ * @return - the number of variables in the SAT object
+ */
 int SAT::getNumVars() const {
     return numVars;
 }
 
+/**
+ * Getter for the number of clauses
+ * @return - number of clauses
+ */
 unsigned long SAT::getNumClauses() const {
     return numClauses;
 }
 
+/**
+ * Setter for number of variables
+ * @param numVars - number of variables to assign
+ */
 void SAT::setNumVars(int numVars) {
     SAT::numVars = numVars;
 }
 
+/**
+ * Setter for number of clauses
+ * @param numClauses - number of clauses to assign
+ */
 void SAT::setNumClauses(unsigned long numClauses) {
     SAT::numClauses = numClauses;
 }

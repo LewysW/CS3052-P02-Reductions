@@ -13,19 +13,32 @@ class SAT;
 
 using namespace std;
 
+/**
+ * Class representing the COL format
+ */
 class COL {
 public:
+    //Constructors
     explicit COL();
     explicit COL(vector<string> file);
+
+    //Function to convert COL to SAT
     SAT* toSAT();
+
+    //Function to print object
     void print();
 
 private:
+    //Stores edges of graph
     vector<pair<int, int>> edges;
+    //Number of colours
     int k;
+    //Stores number of nodes and edges
     int numNodes;
     int numEdges;
 public:
+    //Getters and setters:
+
     vector<pair<int, int>>& getEdges();
 
     void setEdges(vector<pair<int, int>> &edges);

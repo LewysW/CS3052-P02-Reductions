@@ -4,14 +4,20 @@
 #include <vector>
 using namespace std;
 
+/**
+ * Class to represent clauses of a SAT representation
+ */
 class Clause {
 
 public:
+    //Getter for variables of clause
     vector<string> &getVars();
 
+    //Setter for variables of clause
     void setVars(const vector<string> &vars);
 
 private:
+    //Variables of clause
     vector<string> vars;
 };
 

@@ -35,6 +35,7 @@ int ParserCOL::validFile(vector<string>& file) {
         if (it[0][0] == 'p') {
             pos = it;
             break;
+            //Invalid if not a comment, the problem line, or an empty line
         } else if (it[0][0] != 'c') {
             return INVALID_PREAMBLE;
         }
@@ -104,7 +105,8 @@ int ParserCOL::validFile(vector<string>& file) {
         }
     }
 
-    if (edges.size() > numEdges || edges.size() < numEdges) return INVALID_EDGES;
+    //Checks if the number of edges is invalid
+    if (edges.size() != numEdges) return INVALID_EDGES;
 
     return 0;
 }
@@ -128,7 +130,12 @@ vector<string> ParserCOL::tokenizeLine(string line) {
     return tokens;
 }
 
-//https://stackoverflow.com/questions/8888748/how-to-check-if-given-c-string-or-char-contains-only-digits
+/**
+ * Checks whether a string is made up of digits
+ * Original source - https://stackoverflow.com/questions/8888748/how-to-check-if-given-c-string-or-char-contains-only-digits
+ * @param str - to check for digits
+ * @return - whether or not the string is digits
+ */
 bool ParserCOL::is_digits(const std::string &str) {
     return std::all_of(str.begin(), str.end(), ::isdigit); // C++11
 }

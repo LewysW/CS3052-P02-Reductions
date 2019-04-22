@@ -15,16 +15,28 @@ class COL;
 
 using namespace std;
 
+/**
+ * Class to represent the SAT format
+ */
 class SAT {
 public:
+    //Constructors
     explicit SAT();
     explicit SAT(vector<string> file);
 
+    //Function to convert to 3SAT
     SAT* to3SAT();
+
+    //Function to check if SAT object is in 3-SAT
     bool is3SAT();
 
+    //Function to convert to kCOL
     COL* toKCOL();
-    bool containsEdge(vector<pair<int, int>>& edges, int first, int second);
+
+    //Function to print SAT object
+    void print();
+
+    //Getters and setters:
 
     vector<Clause>& getClauses();
 
@@ -34,12 +46,11 @@ public:
 
     unsigned long getNumClauses() const;
 
-    void print();
-
     void setNumVars(int numVars);
 
     void setNumClauses(unsigned long numClauses);
 private:
+    //Number of variables, number of clauses, and list of clauses in SAT object
     int numVars;
     unsigned long numClauses;
     vector<Clause> clauses;

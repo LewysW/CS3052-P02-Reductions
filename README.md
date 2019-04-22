@@ -1,6 +1,22 @@
 # CS3052-P02-Reductions
 Second practical for CS3052 Computational Complexity
 
+Compilation/Execution Instructions:
+
+To compile the program executables, navigate to the 'src/' directory in the submission folder and run 'make' in a terminal.
+
+To run the program(s), simply navigate to the 'src/' directory and run the following command:
+
+	./<executable> < <input file>
+
+The above command has the effect of running one of the provided executables and piping in a file as input.
+
+To run the program using stacscheck, navigate to the 'src/' directory and run the following command:
+
+	stacscheck Tests-v2-1
+
+
+
 Plan for practical:
 
 SAT -> 3-SAT
@@ -104,6 +120,26 @@ kCOL in DIMACS COL format -> SAT DIMACS CNF format
 Task 2: More Complex Reduction
 
 3SAT DIMACS CNF format -> kCOL DIMACS COL format
+
+	Given k clauses and n >= 4 variables, we construct a graph with 3n + k vertices (nodes), e.g. in the case of n = 4, k = 4:
+
+		{x1, ... ,xn} e.g. 1 - 4
+		
+		{¬x1, ..., ¬xn} e.g. 5 - 8
+
+		{y1, ..., yn} e.g. 9 - 12
+
+		{C1, ..., Ck} e.g. 13 - 16
+
+	Edges given by rules:
+
+		- Each vertex xi is joined to ¬xi e.g. {xi, ¬xi}
+
+		- Each vertex yi is joined to every other yj e.g. {yi, yi + 1}, {yi, yi + 2}, ..., {yi, yi + n}, {yi + 1, yi + 2}, .... {yi + 1, yi + n}
+
+		- Each vertex yi is joined to xj and ¬xj provided j != i e.g. {y1, x2}, {y1, ¬x2}, {y1, x3}, {y1, ¬x3} but not {y1, x1}, {y1, ¬x1}
+
+		- Each vertex Ci is joined to each literal xj or ¬xj which is not in clause i e.g. if C1 = {x1, ¬x2}
 
 --------------------------------------------------
 

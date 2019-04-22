@@ -15,11 +15,21 @@
 
 using namespace std;
 
+/**
+ * Parser class for CNF input files
+ */
 class ParserCNF {
 public:
+    //Reads the input for standard input
     vector<string> readInput();
+
+    //Validates an input file for CNF (0 if valid and an error code if not)
     int validFile(vector<string>& file);
+
+    //Tokenizes a string into a list of tokens
     static vector<string> tokenizeLine(string line);
+
+    //Checks whether a string is made up of digit characters
     bool is_digits(const std::string &str);
 };
 
