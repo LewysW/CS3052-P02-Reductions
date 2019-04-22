@@ -204,6 +204,33 @@ src/formats/clause.cpp.s:
 	$(MAKE) -f CMakeFiles/sattothreesat.dir/build.make CMakeFiles/sattothreesat.dir/src/formats/clause.cpp.s
 .PHONY : src/formats/clause.cpp.s
 
+src/formats/edge.o: src/formats/edge.cpp.o
+
+.PHONY : src/formats/edge.o
+
+# target to build an object file
+src/formats/edge.cpp.o:
+	$(MAKE) -f CMakeFiles/sattothreesat.dir/build.make CMakeFiles/sattothreesat.dir/src/formats/edge.cpp.o
+.PHONY : src/formats/edge.cpp.o
+
+src/formats/edge.i: src/formats/edge.cpp.i
+
+.PHONY : src/formats/edge.i
+
+# target to preprocess a source file
+src/formats/edge.cpp.i:
+	$(MAKE) -f CMakeFiles/sattothreesat.dir/build.make CMakeFiles/sattothreesat.dir/src/formats/edge.cpp.i
+.PHONY : src/formats/edge.cpp.i
+
+src/formats/edge.s: src/formats/edge.cpp.s
+
+.PHONY : src/formats/edge.s
+
+# target to generate assembly for a file
+src/formats/edge.cpp.s:
+	$(MAKE) -f CMakeFiles/sattothreesat.dir/build.make CMakeFiles/sattothreesat.dir/src/formats/edge.cpp.s
+.PHONY : src/formats/edge.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -303,6 +330,9 @@ help:
 	@echo "... src/formats/clause.o"
 	@echo "... src/formats/clause.i"
 	@echo "... src/formats/clause.s"
+	@echo "... src/formats/edge.o"
+	@echo "... src/formats/edge.i"
+	@echo "... src/formats/edge.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

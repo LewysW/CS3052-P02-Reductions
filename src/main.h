@@ -11,9 +11,11 @@
 #include "formats/SAT.h"
 #include "formats/COL.h"
 #define EMPTY_FILE (-4)
+#define NOT_3SAT (-5)
 
 using namespace std;
 
+int run(string execName);
 bool endsWith(std::string str, std::string suffix);
 void printFile(vector<string>& file);
 

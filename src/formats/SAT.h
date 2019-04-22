@@ -21,6 +21,7 @@ public:
     explicit SAT(vector<string> file);
 
     SAT* to3SAT();
+    bool is3SAT();
 
     vector<Clause>& getClauses();
 

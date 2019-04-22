@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/sattothreesat.dir/src/formats/clause.cpp.o"
   "CMakeFiles/sattothreesat.dir/src/parsers/parserCOL.cpp.o"
   "CMakeFiles/sattothreesat.dir/src/formats/COL.cpp.o"
+  "CMakeFiles/sattothreesat.dir/src/formats/edge.cpp.o"
   "sattothreesat.pdb"
   "sattothreesat"
 )

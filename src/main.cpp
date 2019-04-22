@@ -7,36 +7,51 @@ int main(int argc, char* argv[]) {
     if (argc > 1) return 0;
 
     string execStr(argv[0]);
-    int valid = 0;
+    return run(execStr);
+}
 
-    if (endsWith(execStr, "sattothreesat")) {
+int run(string execName) {
+    int isValid = 0;
+
+    if (endsWith(execName, "sattothreesat")) {
         ParserCNF parser;
         vector<string> file = parser.readInput();
 
         if (file.empty()) return EMPTY_FILE;
 
-        if ((valid = parser.validFile(file)) != 0) return valid;
+        if ((isValid = parser.validFile(file)) != 0) return isValid;
 
         SAT sat(file);
         SAT threeSAT = *sat.to3SAT();
         threeSAT.print();
-    } else if (endsWith(execStr, "coltosat")) {
+    } else if (endsWith(execName, "coltosat")) {
         ParserCOL parser;
         vector<string> file = parser.readInput();
 
         if (file.empty()) return EMPTY_FILE;
 
-        if ((valid = parser.validFile(file)) != 0) return valid;
+        if ((isValid = parser.validFile(file)) != 0) return isValid;
 
         COL col(file);
         SAT sat = *col.toSAT();
         sat.print();
 
-    } else if (endsWith(execStr, "threesattocol")) {
+    } else if (endsWith(execName, "threesattocol")) {
         cout << "threesattocol" << endl;
+        ParserCNF parser;
+        vector<string> file = parser.readInput();
+
+        if (file.empty()) return EMPTY_FILE;
+
+        if ((isValid = parser.validFile(file)) != 0) return isValid;
+
+        SAT sat(file);
+
+        if (!sat.is3SAT()) return NOT_3SAT;
+        
     }
 
-    return valid;
+    return isValid;
 }
 
 /**

@@ -88,14 +88,14 @@ kCOL in DIMACS COL format -> SAT DIMACS CNF format
 	• ‘At-least-one’ clauses (ALO). A single clause {yi,1, yi,2, . . . yi,k} for each node i, which says that each node has
 	to have at least one colour:
 
-		i.e. if k is 4 then each node is assigned 4 unique colours (if there are 10 nodes then there will be 10 clauses, each made up of 4 colours)
+		i.e. if k is 4 then each node is assigned 4 unique colours (if there are 10 nodes then there will be 10 clauses, 1 for each colour)
 
 	• ‘At-most-one’ clauses (AMO). A clause for every node and pair j, j0 of colours. The clause {¬yi,j , ¬yi,j0} says
 	that node i can’t be both colour j and colour j'.
 
 		i.e. generate a clause for each pair of colours in each node. For example if a node has 4 colours then 6 clauses are generated
 
-	• ‘Edge’ clauses. For each edge in the graph connecting nodes i and i 0, one clause for each colour j. The clause {¬yi,j , ¬yi0,j} says that either i or i0 is not 		coloured with j (or neither is).
+	• ‘Edge’ clauses. For each edge in the graph connecting nodes i and i 0, one clause for each colour j. The clause {¬yi,j , ¬yi0,j} says that either i or i0 is not coloured with j (or neither is).
 		
 		i.e. for each colour i in the two nodes, make a clause made up of the two colours.
 

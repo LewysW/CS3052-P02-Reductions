@@ -76,11 +76,20 @@ SAT* SAT::to3SAT() {
         }
     }
 
-    //TODO - refactor clause size functions (getter/setter)
     threeSAT->setClauses(tempClauses);
     threeSAT->setNumClauses(tempClauses.size());
 
     return threeSAT;
+}
+
+bool SAT::is3SAT() {
+    for (auto it = getClauses().begin(); it != getClauses().end(); it++) {
+        if (it->getVars().size() > 3) {
+            return false;
+        }
+    }
+
+    return true;
 }
 
 void SAT::setClauses(vector<Clause> &clauses) {
