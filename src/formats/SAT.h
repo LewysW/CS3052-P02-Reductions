@@ -24,6 +24,7 @@ public:
     bool is3SAT();
 
     COL* toKCOL();
+    bool containsEdge(vector<pair<int, int>>& edges, int first, int second);
 
     vector<Clause>& getClauses();
 

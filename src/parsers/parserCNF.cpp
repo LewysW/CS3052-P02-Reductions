@@ -55,7 +55,6 @@ int ParserCNF::validFile(vector<string>& file) {
 
     string clauses;
     for (auto it = pos + 1; it != file.end(); it++) {
-        if (it->empty()) return INVALID_CLAUSES;
         clauses += *it + " ";
     }
 

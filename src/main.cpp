@@ -40,7 +40,6 @@ int run(string execName) {
         sat.print();
 
     } else if (endsWith(execName, "threesattocol")) {
-        cout << "threesattocol" << endl;
         ParserCNF parser;
         vector<string> file = parser.readInput();
 
