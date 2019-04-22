@@ -101,54 +101,46 @@ COL* SAT::toKCOL() {
 
     //Each vertex xi is joined to ¬xi
     for (int i = 1; i <= n; i++) {
-        if (!containsEdge(tempEdges, i, i + n))
-            tempEdges.emplace_back(make_pair(i, i + n));
+        tempEdges.emplace_back(make_pair(i, i + n));
     }
-
-    col->setEdges(tempEdges);
-    col->setNumEdges(tempEdges.size());
-    col->print();
-    cout << "-------------------------" << endl;
 
     //Each vertex yi is joined to every other yj
     for (int i = 2*n + 1; i <= (2*n + n); i++) {
         for (int j = i + 1; j <= (2*n + n); j++) {
-            if (!containsEdge(tempEdges, i, j))
-                tempEdges.emplace_back(i, j);
+            tempEdges.emplace_back(i, j);
         }
     }
-
-    col->setEdges(tempEdges);
-    col->setNumEdges(tempEdges.size());
-    col->print();
-    cout << "-------------------------" << endl;
 
     //Each vertex yi is joined to xj and ¬xj provided j != i
     for (int i = 2*n + 1; i <= (2*n + n); i++) {
         for (int j = 1; j <= 2*n; j++) {
             //Checks that j != i for each vertex yi joining to xj and ¬xj
             if ((i % n) != (j % n)) {
-                if (!containsEdge(tempEdges, i, j))
-                    tempEdges.emplace_back(i, j);
+                tempEdges.emplace_back(i, j);
             }
         }
     }
-
-    col->setEdges(tempEdges);
-    col->setNumEdges(tempEdges.size());
-    col->print();
-    cout << "-------------------------" << endl;
 
     //Each vertex Ci is joined to each literal xj or ¬xj which is is not in clause i
     for (unsigned int i = 1; i <= k; i++) {
         vector<string> vars = getClauses()[i - 1].getVars();
         for (int j = 1; j <= 2*n; j++) {
-            if (find(vars.begin(), vars.end(), to_string(j)) == vars.end()) {
-                if (!containsEdge(tempEdges, i, j))
-                    tempEdges.emplace_back(i, j);
+            string var;
+            //Converts j to a correct CNF variable value
+            if (j > n && j <= 2*n) {
+                var = to_string((j - n) * -1);
+            } else {
+                var = to_string(j);
+            }
+
+            if (find(vars.begin(), vars.end(), var) == vars.end()) {
+                tempEdges.emplace_back(3 * n + i, j);
             }
         }
+
+        cout << endl;
     }
+
 
     col->setNumEdges(tempEdges.size());
     col->setEdges(tempEdges);
