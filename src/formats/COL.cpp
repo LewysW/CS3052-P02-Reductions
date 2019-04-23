@@ -52,6 +52,10 @@ SAT* COL::toSAT() {
     sat->setNumVars(0);
     sat->setNumClauses(0);
 
+    /**
+     * TASK 3 kCOL to SAT analysis [1.1]:
+     */
+
     //At-least-one clauses (ALO)
     //A single clause {yi,1, yi,2, . . . yi,k} for each node i, which says that each node has
     //to have at least one colour
@@ -59,6 +63,9 @@ SAT* COL::toSAT() {
         auto* clause = new Clause;
         vector<string> vars;
 
+        /**
+         * TASK 3 kCOL to SAT analysis [1.2]:
+         */
         for (int col = 1; col <= getK(); col++) {
             vars.push_back(to_string(node * getK() + col));
             sat->setNumVars(sat->getNumVars() + 1);
@@ -68,12 +75,22 @@ SAT* COL::toSAT() {
         tempClauses.push_back(*clause);
     }
 
+    /**
+     * TASK 3 kCOL to SAT analysis [2.0]:
+     */
+
     //At-most-one clauses (AMO)
     //A clause for every node and pair j, j0 of colours. The clause {¬yi,j , ¬yi,j0} says
     //that node i can’t be both colour j and colour j0.
     for (int node = 0; node < getNumNodes(); node++) {
+        //TASK 3 kCOL to SAT analysis [2.1]
         for (int col = 1; col < getK(); col++) {
             int colCount = col + 1;
+
+            /**
+             * TASK 3 kCOL to SAT analysis [2.2]:
+             */
+
             while (colCount <= getK()) {
                 auto* clause = new Clause;
                 vector<string> vars;
@@ -86,6 +103,10 @@ SAT* COL::toSAT() {
         }
     }
 
+    /**
+     * TASK 3 kCOL to SAT analysis [3.0]:
+     */
+
     /* Edge clauses
      * For each edge in the graph connecting nodes i and i0, one clause for each colour j.
      * The clause{¬yi,j , ¬yi0,j} says that either i or i0is not coloured with j (or neither is).
@@ -93,6 +114,10 @@ SAT* COL::toSAT() {
     for (auto it = getEdges().begin(); it != getEdges().end(); it++) {
         int first = it->first;
         int second = it->second;
+
+        /**
+         * TASK 3 kCOL to SAT analysis [3.1]:
+         */
 
         for (int col = 1; col <= getK(); col++) {
             Clause clause;

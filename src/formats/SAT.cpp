@@ -60,12 +60,20 @@ SAT* SAT::to3SAT() {
     threeSAT->setNumVars(getNumVars());
     string var;
 
+    /**
+     * TASK 3 SAT to 3-SAT Analysis [1.0]:
+     */
+
     //Used integer loop instead of iterator due to iterator invalidation
     for (unsigned int c = 0; c < tempClauses.size(); c++) {
         //Checks if a clause has more than 3 literals
         if (tempClauses[c].getVars().size() > 3) {
             Clause clause;
             vector<string> vars;
+
+            /**
+             * TASK 3 SAT to 3-SAT Analysis [1.1]
+             */
 
             //Loops until the clause has been reduced to 2 literals
             while (tempClauses[c].getVars().size() > 2) {
@@ -111,20 +119,42 @@ COL* SAT::toKCOL() {
     //Sets the number of vertices (nodes)
     col->setNumNodes(3 * n + k);
 
+    /**
+     * TASK 3 3-SAT to k-COL analysis [1.0]:
+     */
+
     //Each vertex xi is joined to ¬xi
     for (int i = 1; i <= n; i++) {
         tempEdges.emplace_back(make_pair(i, i + n));
     }
 
+    /**
+     * TASK 3 3-SAT to k-COL analysis [2.0]:
+     */
+
     //Each vertex yi is joined to every other yj
     for (int i = 2*n + 1; i <= (2*n + n); i++) {
+
+        /**
+         * TASK 3 3-SAT to k-COL analysis [2.1]:
+         */
+
         for (int j = i + 1; j <= (2*n + n); j++) {
             tempEdges.emplace_back(make_pair(i, j));
         }
     }
 
+    /**
+     * TASK 3 3-SAT to k-COL analysis [3.0]:
+     */
+
     //Each vertex yi is joined to xj and ¬xj provided j != i
     for (int i = 2*n + 1; i <= (2*n + n); i++) {
+
+        /**
+         * TASK 3 3-SAT to k-COL analysis [3.1]:
+         */
+
         for (int j = 1; j <= 2*n; j++) {
             //Checks that j != i for each vertex yi joining to xj and ¬xj
             if ((i % n) != (j % n)) {
@@ -133,9 +163,18 @@ COL* SAT::toKCOL() {
         }
     }
 
+    /**
+     * TASK 3 3-SAT to k-COL analysis [4.0]:
+     */
+
     //Each vertex Ci is joined to each literal xj or ¬xj which is is not in clause i
     for (unsigned int i = 1; i <= k; i++) {
         vector<string> vars = getClauses()[i - 1].getVars();
+
+        /**
+         * TASK 3 3-SAT to k-COL analysis [4.1]:
+         */
+
         for (int j = 1; j <= 2*n; j++) {
             string var;
             //Converts j to a correct CNF variable value
@@ -149,8 +188,6 @@ COL* SAT::toKCOL() {
                 tempEdges.emplace_back(make_pair(3 * n + i, j));
             }
         }
-
-        cout << endl;
     }
 
     //Assigns the number of edges and list of edges to the COL object
