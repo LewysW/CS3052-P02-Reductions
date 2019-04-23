@@ -12,7 +12,11 @@
 
 using namespace std;
 
+/*Runs the procedure corresponding to
+ the executable name provided */
 int run(string execName);
+
+//Returns whether a given string ends with a given suffix
 bool endsWith(std::string str, std::string suffix);
 
 #endif //CS3052_P02_REDUCTIONS_MAIN_H

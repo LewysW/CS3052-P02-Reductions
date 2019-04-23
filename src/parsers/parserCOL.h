@@ -17,11 +17,21 @@
 
 using namespace std;
 
+/**
+ * Parser class for COL input files
+ */
 class ParserCOL {
 public:
+    //Reads the input from standard input
     vector<string> readInput();
+
+    //Validates the input file, returns 0 if valid or an error code if not
     int validFile(vector<string>& file);
+
+    //Tokenizes a line into a vector of string tokens
     static vector<string> tokenizeLine(string line);
+
+    //Checks whether a string is made up of digit characters
     bool is_digits(const std::string &str);
 };
 

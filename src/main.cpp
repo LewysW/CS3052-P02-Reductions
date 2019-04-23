@@ -1,15 +1,35 @@
 #include "main.h"
 
+/**
+ * Main function
+ * @param argc - number of arguments
+ * @param argv - list of arguments
+ * @return status code
+ */
 int main(int argc, char* argv[]) {
-    if (argc > 1) return 0;
+    if (argc > 1) {
+        cout << "Usage:" << endl;
+        cout << "./<path_to_executable> < <input_file>" << endl;
+        cout << "Or alternatively, type input using standard input." << endl;
+        return 0;
+    }
 
+    //Converts the first argument (the name of the executable) to string
     string execStr(argv[0]);
+
+    //Returns the result of running the executable on the input
     return run(execStr);
 }
 
+/**
+ * Runs the procedure corresponding to the name of the executable provided
+ * @param execName - name of executable to run
+ * @return status code of running executable
+ */
 int run(string execName) {
     int isValid = 0;
 
+    //Runs if the 'sattothreesat' executable is provided
     if (endsWith(execName, "sattothreesat")) {
         ParserCNF parser;
         vector<string> file = parser.readInput();
@@ -21,9 +41,16 @@ int run(string execName) {
             return isValid;
         }
 
+        //Creates a SAT object, initialised with the given file
         SAT sat(file);
+
+        //Converts the SAT object to 3-SAT
         SAT threeSAT = *sat.to3SAT();
+
+        //Prints the resulting object
         threeSAT.print();
+
+        //Runs if the 'coltosat' executable is provided
     } else if (endsWith(execName, "coltosat")) {
         ParserCOL parser;
         vector<string> file = parser.readInput();
@@ -35,10 +62,14 @@ int run(string execName) {
             return isValid;
         }
 
+        //Creates a COL object with the given input file
         COL col(file);
+
+        //Converts COL object to SAT and prints it
         SAT sat = *col.toSAT();
         sat.print();
 
+        //Runs if the 'threesattocol' executable is provided
     } else if (endsWith(execName, "threesattocol")) {
         ParserCNF parser;
         vector<string> file = parser.readInput();
