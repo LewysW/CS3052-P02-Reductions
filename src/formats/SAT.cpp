@@ -119,7 +119,7 @@ COL* SAT::toKCOL() {
     //Each vertex yi is joined to every other yj
     for (int i = 2*n + 1; i <= (2*n + n); i++) {
         for (int j = i + 1; j <= (2*n + n); j++) {
-            tempEdges.emplace_back(i, j);
+            tempEdges.emplace_back(make_pair(i, j));
         }
     }
 
@@ -128,7 +128,7 @@ COL* SAT::toKCOL() {
         for (int j = 1; j <= 2*n; j++) {
             //Checks that j != i for each vertex yi joining to xj and ¬xj
             if ((i % n) != (j % n)) {
-                tempEdges.emplace_back(i, j);
+                tempEdges.emplace_back(make_pair(i, j));
             }
         }
     }
@@ -146,7 +146,7 @@ COL* SAT::toKCOL() {
             }
 
             if (find(vars.begin(), vars.end(), var) == vars.end()) {
-                tempEdges.emplace_back(3 * n + i, j);
+                tempEdges.emplace_back(make_pair(3 * n + i, j));
             }
         }
 
