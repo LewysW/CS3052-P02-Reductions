@@ -53,7 +53,7 @@ SAT* COL::toSAT() {
     sat->setNumClauses(0);
 
     /**
-     * TASK 3 kCOL to SAT analysis [1.1]:
+     * TASK 3 kCOL to SAT analysis [1.0]:
      */
 
     //At-least-one clauses (ALO)
@@ -64,7 +64,7 @@ SAT* COL::toSAT() {
         vector<string> vars;
 
         /**
-         * TASK 3 kCOL to SAT analysis [1.2]:
+         * TASK 3 kCOL to SAT analysis [1.1]:
          */
         for (int col = 1; col <= getK(); col++) {
             vars.push_back(to_string(node * getK() + col));
@@ -83,7 +83,9 @@ SAT* COL::toSAT() {
     //A clause for every node and pair j, j0 of colours. The clause {¬yi,j , ¬yi,j0} says
     //that node i can’t be both colour j and colour j0.
     for (int node = 0; node < getNumNodes(); node++) {
-        //TASK 3 kCOL to SAT analysis [2.1]
+        /**
+         * TASK 3 kCOL to SAT analysis [2.1]
+         */
         for (int col = 1; col < getK(); col++) {
             int colCount = col + 1;
 

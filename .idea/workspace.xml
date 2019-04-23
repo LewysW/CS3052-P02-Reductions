@@ -15,9 +15,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6fb745ac-78ac-406f-9664-612eca1eb157" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/formats/COL.cpp" afterPath="$PROJECT_DIR$/src/formats/COL.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/formats/SAT.cpp" afterPath="$PROJECT_DIR$/src/formats/SAT.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,21 +28,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SAT.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/formats/SAT.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1494">
-              <caret line="176" column="0" lean-forward="false" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="COL.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/formats/COL.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="666">
-              <caret line="118" column="45" lean-forward="false" selection-start-line="118" selection-start-column="45" selection-end-line="118" selection-end-column="45" />
+            <state relative-caret-position="-702">
+              <caret line="86" column="44" lean-forward="false" selection-start-line="86" selection-start-column="44" selection-end-line="86" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -221,12 +209,12 @@
       <workItem from="1555870628861" duration="14556000" />
       <workItem from="1555932267770" duration="3362000" />
       <workItem from="1555941627096" duration="17140000" />
-      <workItem from="1556008875815" duration="11688000" />
+      <workItem from="1556008875815" duration="13511000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111959000" />
+    <option name="totallyTimeSpent" value="113782000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
@@ -556,7 +544,7 @@
         <state relative-caret-position="936">
           <caret line="52" column="79" lean-forward="false" selection-start-line="52" selection-start-column="79" selection-end-line="52" selection-end-column="79" />
           <folding>
-            <element signature="e#129#146#0" expanded="true" />
+            <element signature="e#129#146#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -631,7 +619,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/formats/SAT.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1494">
+        <state relative-caret-position="2304">
           <caret line="176" column="0" lean-forward="false" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
           <folding />
         </state>
@@ -639,8 +627,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/formats/COL.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="118" column="45" lean-forward="false" selection-start-line="118" selection-start-column="45" selection-end-line="118" selection-end-column="45" />
+        <state relative-caret-position="-702">
+          <caret line="86" column="44" lean-forward="false" selection-start-line="86" selection-start-column="44" selection-end-line="86" selection-end-column="44" />
           <folding />
         </state>
       </provider>
